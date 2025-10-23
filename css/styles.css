@@ -30,6 +30,7 @@ body{
 .navigation h3:not(:hover){
     animation: floatDown 1s ease forwards;
 }
+
 .header{
     display:flex;
     padding: 20px;
@@ -137,5 +138,73 @@ body{
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .navigation h3 {
+    font-size: 1rem;
+  }
+
+  .welcome-content {
+    margin-top: 20px;
+    height: 50vh;
+  }
+
+  .welcome-container {
+    width: 90vw;
+  }
+
+  .welcome-text {
+    font-size: 1.8rem;
+    border-bottom-width: 3px;
+    padding: 3px;
+  }
+
+  .aboutme-container {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .aboutme-text {
+    width: 90vw;
+    height: auto;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .aboutme-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .aboutme-image {
+    width: 80vw;
+    height: auto;
+    justify-content: center;
+  }
+
+  .aboutme-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
   }
 }
