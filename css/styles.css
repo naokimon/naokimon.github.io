@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -14,9 +15,21 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(10, 10, 10) 40%, rgb(1, 23, 41));
+    background-image: linear-gradient(to bottom, rgb(10, 10, 10) 40%, rgb(1, 23, 41));  
 }
 
+.navigation a{
+    text-decoration: none;
+    color: rgba(210, 210, 210);
+}
+
+.navigation h3:hover{
+    animation: floatUp 1s ease forwards;
+}
+
+.navigation h3:not(:hover){
+    animation: floatDown 1s ease forwards;
+}
 .header{
     display:flex;
     padding: 20px;
@@ -29,49 +42,28 @@ body{
     padding-bottom: 15px;
 }
 
+.welcome-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: 60vh;
+}
+
 .welcome-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
-    width: 100%;
-    margin-top: 75px;
-}
-
-.welcome-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(10, 10, 10, 0.75);
+    text-align: center;
     height: 100%;
-    width: 60%;
-    border-radius: 15px;
-    padding: 20px;
+    width: 50vw;
 }
 
-.welcome-article{
-    font-size: 1.5rem;
-    text-shadow: 4px 4px 4px rgb(0, 0, 0);
-    color: rgba(203, 203, 203, 0.85);
-    animation: bob 5s ease-in-out infinite;
-    margin-top: 1000px;
-}
-
-.welcome-socials img{
-    display: flex;
-    flex-direction: row;
-    height: 5%;
-    opacity: 0.5;
-    gap: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.welcome-socials img:hover{
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1.1);
+.welcome-text{
+    font-size: 3rem;
+    animation: bob 3s infinite;
+    border-bottom: solid 5px;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.75)
 }
 
 @keyframes bob {
@@ -80,5 +72,70 @@ body{
   }
   50% {
     transform: translateY(-3px);
+  }
+}
+
+.aboutme-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5vh;
+    height: 100vh;
+    gap: 10vw;
+}
+
+.aboutme-text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    height: 75vh;
+    width: 40vw;
+    font-size: 1.5rem;
+}
+
+.aboutme-text h1{
+    margin-bottom: 15px;
+}
+
+.aboutme-text p{
+    line-height: 1.4;
+    border-bottom: solid 5px rgba(255, 255, 255, 0.75);
+    padding-bottom: 5px;
+}
+
+.aboutme-image{
+    display: flex;
+    align-items: center;
+    height: 75vh;
+    width: 40vw;
+}
+
+.aboutme-image img{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
